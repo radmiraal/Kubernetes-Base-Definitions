@@ -1,0 +1,8 @@
+---
+commonLabels:
+  "app.kubernetes.io/name": "etcd"
+  "app.kubernetes.io/component": "etcd-cluster"
+  "app.kubernetes.io/managed-by": "kubectl"
+resources:
+  - spec-pods.yaml
+  - spec-services.yaml

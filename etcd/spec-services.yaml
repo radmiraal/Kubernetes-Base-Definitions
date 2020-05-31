@@ -1,0 +1,72 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: etcd-client
+spec:
+  type: ClusterIP
+  ports:
+    - name: etcd-client-port
+      port: 2379
+      protocol: TCP
+      targetPort: 2379
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    etcd_node: etcd1
+  name: etcd1
+spec:
+  ports:
+    - name: client
+      port: 2379
+      protocol: TCP
+      targetPort: 2379
+    - name: server
+      port: 2380
+      protocol: TCP
+      targetPort: 2380
+  selector:
+    etcd_node: etcd1
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    etcd_node: etcd2
+  name: etcd2
+spec:
+  ports:
+    - name: client
+      port: 2379
+      protocol: TCP
+      targetPort: 2379
+    - name: server
+      port: 2380
+      protocol: TCP
+      targetPort: 2380
+  selector:
+    etcd_node: etcd2
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    etcd_node: etcd3
+  name: etcd3
+spec:
+  ports:
+    - name: client
+      port: 2379
+      protocol: TCP
+      targetPort: 2379
+    - name: server
+      port: 2380
+      protocol: TCP
+      targetPort: 2380
+  selector:
+    etcd_node: etcd3
