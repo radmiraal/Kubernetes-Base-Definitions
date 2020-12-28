@@ -15,8 +15,6 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  labels:
-    etcd_node: etcd1
   name: etcd1
 spec:
   ports:
@@ -35,8 +33,6 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  labels:
-    etcd_node: etcd2
   name: etcd2
 spec:
   ports:
@@ -55,8 +51,6 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  labels:
-    etcd_node: etcd3
   name: etcd3
 spec:
   ports:
