@@ -1,0 +1,15 @@
+---
+namespace: kube-system
+commonLabels:
+  "app.kubernetes.io/name": "traefik"
+  "app.kubernetes.io/component": "ingress"
+  "app.kubernetes.io/managed-by": "kubectl"
+  "app": "traefik"
+resources:
+  - spec-resource-definitions.yaml
+  - spec-rbac.yaml
+  - spec-tlsoptions.yaml
+  - spec-middlewares.yaml
+  - spec-service-accounts.yaml
+  - spec-services.yaml
+  - spec-statefulset.yaml
